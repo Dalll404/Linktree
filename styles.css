@@ -1,81 +1,151 @@
-*,
- html, body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --paper: #f4f0e9;
+  --muted: #aaa49b;
+  --line: rgba(244, 240, 233, 0.15);
+  --accent: #e8a46d;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-image: url(afdal.jpg);
-    background-size: cover;
-    backdrop-filter: blur(3px);
-    background-repeat: no-repeat;
-    height: 100vh;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--paper);
+  background-color: #171614;
+  background-image:
+    linear-gradient(rgba(16, 17, 15, 0.68), rgba(16, 17, 15, 0.82)),
+    url("afdal.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.container {
-    font-family: "Poppins", Arial, sans-serif;
-    color: white; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
+.page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 40px 20px;
 }
 
-.logo {
-    background-image: url(mypic.jpg);
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 3px solid #ccc; 
-    margin-bottom: 10px;
+.profile-card {
+  width: min(100%, 420px);
+  padding: 42px 38px 34px;
+  text-align: center;
+  background: rgba(24, 24, 22, 0.88);
+  border: 1px solid rgba(244, 240, 233, 0.13);
+  border-radius: 8px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(8px);
 }
 
-.tolol {
-    font-size: 24px;
-    margin-bottom: 10px;
+.avatar {
+  display: grid;
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 22px;
+  place-items: center;
+  overflow: hidden;
+  color: #211a14;
+  background: var(--accent) url("mypic.jpg") center 36% / cover no-repeat;
+  border: 3px solid rgba(244, 240, 233, 0.82);
+  border-radius: 50%;
+  font-size: 0;
 }
 
-.lol {
-    font-size: 24px;
-    margin-bottom: 20px;
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
 }
 
-.big-boy {
-    list-style-type: none;
-    padding: 0;
-    width: 600px;
+h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
 }
 
-
-.big-boy li {
-    margin-bottom: 10px;
+.username {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 14px;
 }
 
-.big-boy a {
-    text-decoration: none;
-    color: white;
-    border: 2px solid white;
-    padding: 10px;
-    display: block;
-    text-align: center;
-    border-radius: 20px;
-    transition: all .3s;
+.intro {
+  margin: 22px 0 24px;
+  color: #d2cdc5;
+  font-size: 14px;
 }
 
-
-.big-boy a:hover {
-    background-color: white; 
-    color: black;
+.social-links {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-@media (max-width: 500px) {
-    .big-boy {
-        width: 320px;
-        height: 320px;
-    }
+.social-links a {
+  display: flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 17px;
+  color: var(--paper);
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-2px);
+  background-color: rgba(232, 164, 109, 0.09);
+  border-color: rgba(232, 164, 109, 0.55);
+}
+
+.social-links a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.arrow {
+  color: var(--accent);
+  font-size: 17px;
+}
+
+@media (max-width: 480px) {
+  .profile-card {
+    padding: 34px 24px 26px;
+  }
+
+  .page {
+    padding: 24px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
