@@ -3,16 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#171614" />
+    <meta name="theme-color" content="#f4f1eb" />
     <meta
       name="description"
       content="Temukan semua tautan sosial Afdal di satu tempat."
     />
     <title>Afdal — Social Links</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -20,42 +18,80 @@
 
   <body>
     <main class="page">
-      <section class="profile-card" aria-labelledby="profile-name">
-        <div class="avatar" aria-hidden="true">A</div>
-        <p class="eyebrow">SOCIAL LINKS</p>
+      <section class="profile" aria-labelledby="profile-name">
+        <p class="eyebrow">
+          <span class="status-dot" aria-hidden="true"></span> A LITTLE PLACE ON
+          THE INTERNET
+        </p>
+        <div class="avatar" role="img" aria-label="Foto profil Afdal"></div>
         <h1 id="profile-name">Afdal</h1>
         <p class="username">@afdalxzx</p>
-        <p class="intro">Temukan saya di platform lain.</p>
+        <p class="intro">
+          Halo, senang bertemu denganmu.<br />Temukan saya di sini.
+        </p>
 
         <nav aria-label="Tautan media sosial">
           <ul class="social-links">
             <li>
-              <a href="https://instagram.com/afdalxzx"
-                ><span>Instagram</span
-                ><span class="arrow" aria-hidden="true">↗</span></a
+              <a
+                href="https://instagram.com/afdalxzx"
+                target="_blank"
+                rel="noopener noreferrer"
               >
+                <span class="link-number">01</span
+                ><span class="link-name">Instagram</span
+                ><span class="arrow" aria-hidden="true">↗</span>
+              </a>
             </li>
             <li>
-              <a href="#"
-                ><span>WhatsApp</span
-                ><span class="arrow" aria-hidden="true">↗</span></a
+              <a
+                class="unavailable"
+                href="#"
+                data-unavailable="WhatsApp"
+                aria-label="WhatsApp — tautan belum tersedia"
               >
+                <span class="link-number">02</span
+                ><span class="link-name">WhatsApp</span
+                ><span class="link-note">segera hadir</span>
+              </a>
             </li>
             <li>
-              <a href="#"
-                ><span>TikTok</span
-                ><span class="arrow" aria-hidden="true">↗</span></a
+              <a
+                class="unavailable"
+                href="#"
+                data-unavailable="TikTok"
+                aria-label="TikTok — tautan belum tersedia"
               >
+                <span class="link-number">03</span
+                ><span class="link-name">TikTok</span
+                ><span class="link-note">segera hadir</span>
+              </a>
             </li>
             <li>
-              <a href="#"
-                ><span>Facebook</span
-                ><span class="arrow" aria-hidden="true">↗</span></a
+              <a
+                class="unavailable"
+                href="#"
+                data-unavailable="Facebook"
+                aria-label="Facebook — tautan belum tersedia"
               >
+                <span class="link-number">04</span
+                ><span class="link-name">Facebook</span
+                ><span class="link-note">segera hadir</span>
+              </a>
             </li>
           </ul>
         </nav>
+
+        <button class="share-button" type="button" data-copy-link>
+          <span aria-hidden="true">↗</span> Salin tautan halaman
+        </button>
+        <p class="footer-note">
+          Dibuat dengan sederhana <span aria-hidden="true">·</span>
+          <span id="year"></span>
+        </p>
       </section>
     </main>
+    <div class="toast" role="status" aria-live="polite"></div>
+    <script src="index.js" defer></script>
   </body>
 </html>
