@@ -5,6 +5,7 @@ Landing page personal link yang menampilkan profil singkat dan berbagai tautan s
 ## Fitur
 
 - Tampilan modern dan responsif
+- Animasi mengambang berulang pada foto profil
 - Tema terang dan gelap dengan tombol toggle
 - Tombol salin tautan halaman
 - Notifikasi toast saat interaksi terjadi
@@ -14,9 +15,9 @@ Landing page personal link yang menampilkan profil singkat dan berbagai tautan s
 ## Struktur file
 
 - `index.html` — struktur utama halaman
-- `styles.css` — styling seluruh tampilan
+- `styles.css` — styling seluruh tampilan, animasi profil, dan dukungan reduced motion
 - `index.js` — interaksi seperti toast, tema, dan copy link
-- `afdal.jpg` / `mypic.jpg` — aset foto profil
+- `assets/foto-profile.jpeg` — aset foto profil
 
 ## Cara menjalankan
 
