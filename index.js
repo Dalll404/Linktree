@@ -57,4 +57,32 @@ document
     }
   });
 
+const timeElement = document.querySelector("#local-time");
+const dateElement = document.querySelector("#local-date");
+const timezoneElement = document.querySelector("#local-timezone");
+const timeFormatter = new Intl.DateTimeFormat("id-ID", {
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit",
+  hour12: false,
+});
+const dateFormatter = new Intl.DateTimeFormat("id-ID", {
+  weekday: "long",
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
+const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+function updateClock() {
+  const now = new Date();
+  timeElement.textContent = timeFormatter.format(now);
+  timeElement.dateTime = now.toISOString();
+  dateElement.textContent = dateFormatter.format(now);
+  timezoneElement.textContent = timezone.replaceAll("_", " ");
+}
+
+updateClock();
+window.setInterval(updateClock, 1000);
+
 document.querySelector("#year").textContent = new Date().getFullYear();

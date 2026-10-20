@@ -5,7 +5,8 @@ Landing page personal link yang menampilkan profil singkat dan berbagai tautan s
 ## Fitur
 
 - Tampilan modern dan responsif
-- Animasi mengambang berulang pada foto profil
+- Jam dan tanggal lokal yang diperbarui secara langsung
+- Animasi mengambang pada foto profil, animasi masuk kartu/tautan, dan latar bergerak
 - Tema terang dan gelap dengan tombol toggle
 - Tombol salin tautan halaman
 - Notifikasi toast saat interaksi terjadi
